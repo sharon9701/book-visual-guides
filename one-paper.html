@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>《聪明人的一张纸工作整理术》｜小朋友版图解</title>
+  <style>
+    :root{
+      --ink:#243247; --muted:#617089; --paper:#fffdf7; --line:#dce5ee;
+      --yellow:#ffd84a; --blue:#cfeeff; --mint:#d9f6e9; --pink:#ffe0e7;
+      --purple:#e8ddff; --orange:#ffe6bd; --shadow:0 12px 30px rgba(36,50,71,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f5f9ff 0%,#fff 45%,#fff8e7 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}
+    .wrap{max-width:1100px;margin:0 auto;padding:30px 22px 60px}
+    .hero{display:grid;grid-template-columns:210px 1fr;gap:30px;align-items:center;padding:28px;background:var(--paper);border:1px solid #f1e7bf;border-radius:30px;box-shadow:var(--shadow)}
+    .cover{width:210px;height:280px;object-fit:cover;border-radius:14px;box-shadow:0 10px 20px rgba(0,0,0,.18);background:#ffd020}
+    .hero h1{font-size:clamp(30px,5vw,54px);line-height:1.08;margin:0 0 12px;letter-spacing:-.04em}
+    .hero h1 span{background:var(--yellow);padding:0 8px;border-radius:10px}
+    .hero p{font-size:20px;margin:10px 0;color:#40526b}
+    .tag{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--blue);font-weight:700;margin:4px 5px 0 0}
+    h2{font-size:32px;margin:48px 0 18px;letter-spacing:-.03em}
+    h3{font-size:22px;margin:0 0 7px}
+    .big-idea{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+    .idea-card{padding:24px;border-radius:24px;min-height:220px;position:relative;overflow:hidden}
+    .idea-card p{font-size:19px;margin:8px 0 0}
+    .idea-card .emoji{font-size:60px;line-height:1;position:absolute;right:20px;bottom:13px;opacity:.88}
+    .mess{background:var(--pink)} .tidy{background:var(--mint)}
+    .arrow{display:flex;align-items:center;justify-content:center;font-size:55px;color:#f2a51a;font-weight:900}
+    .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch}
+    .step{background:#fff;border:2px solid var(--line);border-radius:18px;padding:16px 13px;min-height:150px;position:relative}
+    .step:not(:last-child)::after{content:'→';position:absolute;right:-24px;top:42px;font-size:30px;color:#f3ad24;font-weight:900;z-index:2}
+    .num{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:var(--yellow);font-weight:900;font-size:19px;margin-bottom:8px}
+    .step b{display:block;font-size:18px}.step small{color:var(--muted);font-size:15px}
+    .s-card{background:#edf5ff;border-radius:24px;padding:24px;display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:center}
+    .sticky{background:#fff;border:3px solid #ffbf2f;box-shadow:6px 8px 0 #ffcf63;padding:16px;transform:rotate(-2deg);border-radius:5px;min-height:190px}
+    .sticky h3{color:#df741a;font-size:26px;text-align:center;border-bottom:2px dashed #ffd26d;padding-bottom:7px}
+    .sticky ol{margin:8px 0 0;padding-left:24px;font-size:16px}.sticky li{margin:4px 0}
+    .s-explain p{font-size:18px;margin:8px 0}.pill{display:inline-block;background:#fff;padding:7px 11px;border-radius:12px;margin:4px 3px;font-weight:700}
+    .grid-demo{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:#c7d8e8;padding:8px;border-radius:16px;max-width:520px;margin:0 auto}
+    .cell{aspect-ratio:1.2;background:#fff;padding:8px;border-radius:8px;font-size:14px;display:flex;align-items:center;justify-content:center;text-align:center}.cell.title{background:#ffd84a;font-weight:900}.r{background:#ffd1d9}.y{background:#fff2b8}.b{background:#cfeeff}.g{background:#d9f6e9}
+    .method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .method{padding:19px 20px;border-radius:20px;border:1px solid var(--line);background:#fff;box-shadow:0 5px 15px rgba(36,50,71,.06);display:grid;grid-template-columns:54px 1fr;gap:13px;align-items:start}
+    .method .icon{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--purple)}
+    .method:nth-child(2) .icon{background:var(--orange)} .method:nth-child(3) .icon{background:var(--blue)} .method:nth-child(4) .icon{background:var(--mint)} .method:nth-child(5) .icon{background:var(--pink)} .method:nth-child(6) .icon{background:var(--yellow)} .method:nth-child(7) .icon{background:#dce7ff}
+    .method p{margin:0;color:#56677f}.method b{color:#e07b16}
+    .read-box{background:#253b58;color:#fff;border-radius:26px;padding:25px}.read-box h3{font-size:27px;color:#ffe06a}.read-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:14px}.read-step{background:#fff;color:var(--ink);padding:13px 10px;border-radius:15px;min-height:115px}.read-step strong{display:block;font-size:17px}.read-step span{font-size:14px;color:#5b6a7b}
+    .useful{display:grid;grid-template-columns:1fr 1fr;gap:16px}.good,.care{padding:22px;border-radius:22px}.good{background:var(--mint)}.care{background:#fff1cf}.good li,.care li{margin:9px 0;font-size:17px}
+    .try{background:linear-gradient(120deg,#fff 0%,#e9f4ff 100%);border:2px solid #cfe0f2;border-radius:26px;padding:25px}.try p{font-size:19px}.try ol{font-size:18px}.try li{margin:9px 0}
+    footer{margin-top:35px;color:#718198;font-size:14px;border-top:1px solid var(--line);padding-top:17px}
+    a{color:#2466b1}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;text-align:center}.cover{margin:auto}.big-idea,.s-card,.useful{grid-template-columns:1fr}.arrow{transform:rotate(90deg);height:35px}.flow,.read-flow{grid-template-columns:1fr}.step:not(:last-child)::after{content:'↓';right:47%;top:auto;bottom:-31px}.method-grid{grid-template-columns:1fr}.step{min-height:auto}.read-step{min-height:auto}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <img class="cover" src="assets/聪明人的一张纸工作整理术_封面.png" alt="书籍封面" />
+      <div>
+        <div><span class="tag">小朋友版</span><span class="tag">一张纸</span><span class="tag">思考整理</span></div>
+        <h1>把脑袋里的“乱糟糟”<br><span>变成一张藏宝图</span></h1>
+        <p>这本书教的，不是写漂亮笔记，而是：<b>先想清楚，再把最重要的东西摆在别人看得懂的地方。</b></p>
+        <p style="font-size:15px;color:#7a8899">作者：高桥政史　中文版：易哲译　图解版核心为 7 个工作模板 + 7 个整读模板</p>
+      </div>
+    </section>
+
+    <h2>1. 它到底在解决什么？</h2>
+    <section class="big-idea">
+      <div class="idea-card mess"><h3>没整理时</h3><p>桌上有很多纸，脑袋里有很多想法，但你不知道哪个重要、先做什么、怎么讲给别人听。</p><div class="emoji">🧸🧩📄</div></div>
+      <div class="arrow">→</div>
+      <div class="idea-card tidy"><h3>整理后</h3><p>一页纸上看见：目标是谁、问题是什么、证据有哪些、结论是什么、下一步做什么。</p><div class="emoji">🗺️✨</div></div>
+    </section>
+
+    <h2>2. 全书的“魔法动作”</h2>
+    <section class="flow">
+      <div class="step"><span class="num">1</span><b>先问清楚</b><small>这张纸是给谁看的？要解决什么？</small></div>
+      <div class="step"><span class="num">2</span><b>分格收集</b><small>一格只放一个点子，先不要写长文章。</small></div>
+      <div class="step"><span class="num">3</span><b>筛掉杂物</b><small>从很多信息里挑出关键词和证据。</small></div>
+      <div class="step"><span class="num">4</span><b>画出关系</b><small>用颜色、箭头、顺序，让重点站出来。</small></div>
+      <div class="step"><span class="num">5</span><b>说成行动</b><small>用一句话讲清楚，并写下下一步。</small></div>
+    </section>
+
+    <h2>3. 最重要的工具：S 便笺</h2>
+    <section class="s-card">
+      <div class="sticky">
+        <h3>S 便笺</h3>
+        <ol><li><b>谁？</b> 给谁解决</li><li><b>什么事？</b> 现状/烦恼</li><li><b>怎么做？</b> 方案</li><li><b>结果如何？</b> 目标画面</li><li><b>结论是？</b> 一句话主张</li></ol>
+      </div>
+      <div class="s-explain">
+        <p><b>像出发前画一张藏宝图：</b>不先写五页方案，先用一张便笺把“为谁、为何、怎么做、做到什么样、核心结论”填上。</p>
+        <span class="pill">Solution：解决问题</span><span class="pill">Story：讲清过程</span><span class="pill">Simple：变简单</span>
+        <p style="font-size:15px;color:#617089">例：为新员工做培训 → 他们不知道流程 → 做一张上手清单 → 一周内能独立完成 → 先做“入职第一周地图”。</p>
+      </div>
+    </section>
+
+    <h2>4. 16 分割笔记：把 15 个点子放进小抽屉</h2>
+    <section class="s-card" style="background:#fff8dc">
+      <div class="grid-demo">
+        <div class="cell title">主题<br>日期</div><div class="cell r">重要</div><div class="cell y">感兴趣</div><div class="cell b">正在做</div>
+        <div class="cell g">要记录</div><div class="cell">关键词</div><div class="cell">证据</div><div class="cell">点子</div>
+        <div class="cell">问题</div><div class="cell">案例</div><div class="cell">联系</div><div class="cell">反例</div>
+        <div class="cell">下一步</div><div class="cell">取舍</div><div class="cell">一句话</div><div class="cell">行动</div>
+      </div>
+      <div class="s-explain"><p><b>为什么有用？</b> 一格一个信息，15 个点子同时出现，比较容易看见“谁和谁有关系”。</p><p><b>做法：</b>打开笔记本左右两页，画 16 格；左上写主题和日期，其余格子写点子；最后用颜色编码。</p><p style="font-size:15px;color:#617089">颜色不是装饰，而是标签：例如红=最重要、黄=感兴趣、蓝=正在做、绿=要记录。颜色含义可按自己习惯改。</p></div>
+    </section>
+
+    <h2>5. 书中 7 个工作模板，一眼看懂</h2>
+    <section class="method-grid">
+      <div class="method"><div class="icon">🧠</div><div><h3>S 便笺</h3><p>开工前定目标、对象、方案和结论。<b>适合：任何模糊任务。</b></p></div></div>
+      <div class="method"><div class="icon">🧱</div><div><h3>16 分割笔记</h3><p>把零散信息变成可检索的小格子。<b>适合：头脑风暴、资料收集。</b></p></div></div>
+      <div class="method"><div class="icon">📚</div><div><h3>杀手级速读 / 整读</h3><p>带着问题读，抓关键词，压成三把“钥匙”，变成行动。<b>适合：筛读职场材料。</b></p></div></div>
+      <div class="method"><div class="icon">🤝</div><div><h3>一张纸交接地图</h3><p>把流程、关键节点和注意事项交给新人。<b>适合：交接、培训。</b></p></div></div>
+      <div class="method"><div class="icon">🗣️</div><div><h3>视觉化沟通 / 会议地图</h3><p>把议题、意见、结论画出来，让讨论不跑偏。<b>适合：会议、共识。</b></p></div></div>
+      <div class="method"><div class="icon">1️⃣</div><div><h3>1·2·3 Map</h3><p>1 个核心消息，配 2W1H 和 3 个要点。<b>适合：报告、提案。</b></p></div></div>
+      <div class="method"><div class="icon">🎬</div><div><h3>故事型简报</h3><p>现状 → 变化/问题 → 三段解决方案 → 结果。<b>适合：说服别人。</b></p></div></div>
+    </section>
+
+    <h2>6. 它的读书法：不是“读得快”，而是“读完能用”</h2>
+    <section class="read-box">
+      <h3>一条小火车 🚂</h3>
+      <div class="read-flow">
+        <div class="read-step"><strong>① 先提问</strong><span>我想从这本书得到什么？</span></div>
+        <div class="read-step"><strong>② 找 16 个词</strong><span>先看目录、标题、重点页。</span></div>
+        <div class="read-step"><strong>③ 压成 3 把钥匙</strong><span>哪些最能回答我的问题？</span></div>
+        <div class="read-step"><strong>④ 变成 1 个行动</strong><span>明天具体做哪一件事？</span></div>
+        <div class="read-step"><strong>⑤ 30 秒复述</strong><span>讲给别人听，检查自己是否真的懂。</span></div>
+      </div>
+      <p style="margin:16px 0 0;color:#d8e7f6">书中还把阅读按目的分成行动、解决问题、突破视角、原理、本质、人生借鉴、预见等 7 种模板；共同骨架都是“带问题输入 → 压缩 → 输出”。</p>
+    </section>
+
+    <h2>7. 真正有益的内容</h2>
+    <section class="useful">
+      <div class="good"><h3>值得留下 ✅</h3><ul><li><b>先定对象：</b>同一份内容，给老板、客户、新人看，写法完全不同。</li><li><b>强迫取舍：</b>一页空间不够，逼你分清“重要”和“只是有趣”。</li><li><b>让思考可见：</b>颜色、箭头、顺序能暴露逻辑断点。</li><li><b>把读书变行动：</b>不止摘抄，而是写出明天要试的动作。</li><li><b>可复用：</b>模板能降低每次从白纸开始的痛苦。</li></ul></div>
+      <div class="care"><h3>要小心看 ⚠️</h3><ul><li><b>“15 分钟一本书”是筛读目标，不是所有书的承诺。</b>文学、数学、法律、医学、复杂技术都需要慢读。</li><li><b>一张纸不是越少越好。</b>细节多时可把一页当总览，附件保留证据。</li><li><b>模板不是思考本身。</b>先问问题，再选模板；不要为了填满格子而填。</li><li><b>企业案例是宣传性例子。</b>“丰田、P&amp;G在用”不等于任何人照做都必然提效。</li></ul></div>
+    </section>
+
+    <h2>8. 今天就能试的 10 分钟练习</h2>
+    <section class="try">
+      <p>拿一张纸，选一个你现在最乱的任务（比如“准备周会”）：</p>
+      <ol><li>左上写：给谁看？日期？</li><li>写 5 个问题：现状、麻烦、证据、方案、想要的结果。</li><li>再画 16 格，把所有想法一格一格放进去。</li><li>圈出最重要的 3 个词，写成一句结论。</li><li>最后补一句：<b>“明天第一步是……”</b></li></ol>
+      <p style="margin-bottom:0;color:#47617c"><b>如果你只能记住一句话：</b>先把复杂东西摊开，再把它压成别人一眼看懂、自己马上能做的一张纸。</p>
+    </section>
+
+    <footer>
+      资料核对：PHP研究所日文出版社书目、三采文化作者专栏与书目页、豆瓣书目摘录等。以上为学习型概括，不替代原书全文。<br>
+      参考：<a href="https://www.php.co.jp/books/detail.php?isbn=978-4-569-82774-2">PHP研究所书目</a> · <a href="https://www.suncolor.com.tw/BookPage.aspx?bokno=109040101018">三采文化书目</a> · <a href="https://www.suncolor.com.tw/Article.aspx?id=102">S便笺五要素</a> · <a href="https://book.douban.com/subject/26969301/">豆瓣书目</a>
+    </footer>
+  </main>
+</body>
+</html>
