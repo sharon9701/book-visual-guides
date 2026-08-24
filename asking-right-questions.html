@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>《学会提问》｜小朋友版图解</title>
+  <style>
+    :root{
+      --ink:#183049; --muted:#607289; --blue:#2f68b1; --sky:#dff1ff;
+      --yellow:#ffd85a; --mint:#daf5e9; --pink:#ffe4ea; --lav:#ebe4ff;
+      --orange:#ffe4bd; --paper:#fffef8; --line:#d9e5ef;
+      --shadow:0 16px 40px rgba(24,48,73,.13);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#edf6ff 0%,#fff 43%,#fff9e9 100%);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}
+    .wrap{max-width:1120px;margin:auto;padding:28px 22px 64px}
+    h1,h2,h3,p{margin-top:0} h2{font-size:34px;letter-spacing:-.03em;margin:48px 0 18px} h3{font-size:22px;margin-bottom:7px}
+    .hero{display:grid;grid-template-columns:250px 1fr;gap:30px;align-items:center;background:var(--paper);border:1px solid #dfe9f3;border-radius:30px;padding:28px;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .hero::after{content:'?';position:absolute;right:-18px;bottom:-128px;font:900 380px/1 Georgia,serif;color:#e7f1fb;z-index:0}
+    .cover{width:250px;height:300px;object-fit:cover;object-position:center 55%;border-radius:18px;box-shadow:0 12px 24px rgba(0,0,0,.19);position:relative;z-index:1}
+    .hero-copy{position:relative;z-index:1}.tag{display:inline-block;background:var(--yellow);padding:6px 12px;border-radius:999px;font-weight:800;margin:0 5px 8px 0}
+    h1{font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.05em;margin-bottom:16px}.hero p{font-size:21px;max-width:700px;color:#40566e}.hero strong{background:linear-gradient(transparent 58%,#ffe686 58%)}
+    .one-line{font-size:27px;font-weight:900;text-align:center;padding:28px;background:var(--blue);color:#fff;border-radius:24px;margin-top:24px}.one-line span{color:#ffe06b}
+    .duo{display:grid;grid-template-columns:1fr 70px 1fr;align-items:stretch;gap:14px}.style-card{padding:24px;border-radius:24px;position:relative;min-height:230px;overflow:hidden}.style-card p{font-size:19px;max-width:70%}.sponge{background:var(--sky)}.gold{background:var(--yellow)}.big-icon{position:absolute;right:18px;bottom:12px;font-size:76px}.versus{display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:900;color:#e57c27}
+    .pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gate{background:#fff;border:2px solid var(--line);border-radius:24px;padding:20px;min-height:285px;position:relative;overflow:hidden}.gate:nth-child(1){border-top:8px solid #4c9ad1}.gate:nth-child(2){border-top:8px solid #9a79d2}.gate:nth-child(3){border-top:8px solid #f0ad33}.gate:nth-child(4){border-top:8px solid #4cad82}.gate .gate-num{font:900 54px/1 Georgia,serif;color:#dbe9f4;position:absolute;right:12px;top:5px}.gate h3{font-size:24px;position:relative}.gate ul{padding-left:20px;margin:15px 0 0}.gate li{margin:10px 0;font-size:17px}.gate b{color:#1c5c93}
+    .eleven{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.q{background:#fff;padding:15px 16px;border-radius:18px;border:1px solid var(--line);box-shadow:0 5px 14px rgba(24,48,73,.06);display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:start;min-height:100px}.q span{display:flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;background:var(--yellow);font-weight:900}.q:nth-child(4n+2) span{background:var(--sky)}.q:nth-child(4n+3) span{background:var(--mint)}.q:nth-child(4n+4) span{background:var(--lav)}.q b{font-size:18px}.q small{display:block;color:var(--muted);font-size:14px;margin-top:3px}
+    .argument{background:#19344f;border-radius:26px;padding:25px;color:#fff;display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;gap:12px;align-items:center;text-align:center}.arg-box{background:#fff;color:var(--ink);border-radius:20px;padding:23px 12px;font-size:21px;font-weight:900}.arg-box small{display:block;color:var(--muted);font-size:14px;font-weight:500;margin-top:6px}.join{font-size:36px;color:#ffd85a;font-weight:900}
+    .use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.use{padding:20px;border-radius:21px;display:grid;grid-template-columns:54px 1fr;gap:13px;align-items:start}.use:nth-child(1){background:var(--sky)}.use:nth-child(2){background:var(--mint)}.use:nth-child(3){background:var(--orange)}.use:nth-child(4){background:var(--pink)}.use:nth-child(5){background:var(--lav)}.use:nth-child(6){background:#fff2b6}.use-icon{font-size:34px}.use p{margin:0;color:#51677e}.use em{font-style:normal;color:#d96724;font-weight:800}
+    .trap{background:#fff;border:2px solid #ffd2d7;border-radius:26px;padding:24px}.trap-row{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:15px}.trap-card{background:#fff1f3;border-radius:17px;padding:15px;text-align:center;font-weight:800}.trap-card span{font-size:35px;display:block}.trap p{font-size:18px}
+    .example{display:grid;grid-template-columns:1fr 1fr;gap:16px}.claim,.check{padding:24px;border-radius:24px}.claim{background:#253f60;color:#fff}.claim .quote{font-size:27px;font-weight:900;line-height:1.35}.check{background:var(--mint)}.check ol{padding-left:22px;margin:10px 0 0}.check li{margin:8px 0;font-size:17px}
+    .keep{display:grid;grid-template-columns:1fr 1fr;gap:16px}.good,.care{padding:23px;border-radius:24px}.good{background:var(--mint)}.care{background:#fff0cf}.good li,.care li{font-size:17px;margin:9px 0}
+    .practice{background:linear-gradient(120deg,#fff 0%,#e8f4ff 100%);border:2px solid #c8dded;border-radius:26px;padding:25px}.practice h3{font-size:28px}.practice ol{font-size:18px}.practice li{margin:9px 0}.mini-form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.mini{background:#fff;border-radius:15px;padding:13px;border:1px solid var(--line);min-height:82px}.mini b{display:block;color:#2d6ea5}
+    footer{margin-top:38px;border-top:1px solid var(--line);padding-top:17px;color:#728198;font-size:14px}a{color:#2a67a5}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center}.cover{margin:auto}.duo{grid-template-columns:1fr}.versus{height:35px}.pipeline,.eleven,.trap-row{grid-template-columns:1fr 1fr}.argument{grid-template-columns:1fr}.join{transform:rotate(90deg)}.use-grid,.example,.keep{grid-template-columns:1fr}.mini-form{grid-template-columns:1fr}}
+    @media(max-width:520px){.pipeline,.eleven,.trap-row{grid-template-columns:1fr}.style-card p{max-width:100%;padding-bottom:65px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <img class="cover" src="assets/学会提问_封面参考.png" alt="《学会提问》封面参考图" />
+      <div class="hero-copy">
+        <span class="tag">小朋友版</span><span class="tag">批判性思维</span><span class="tag">第12版</span>
+        <h1>不要急着相信，<br>先问几个好问题</h1>
+        <p>这本书不是教你“问得很多”，而是教你<strong>检查别人和自己的理由，值不值得相信</strong>。</p>
+        <p style="font-size:15px;color:#718198">M. Neil Browne、Stuart M. Keeley｜Asking the Right Questions</p>
+      </div>
+    </section>
+
+    <div class="one-line">别人递给你一个答案时，先别吞下去；<span>把它拆开看看。</span></div>
+
+    <h2>1. 两种学习方式</h2>
+    <section class="duo">
+      <div class="style-card sponge"><h3>海绵式 🧽</h3><p>“老师说了，我就吸进去。”</p><p><b>优点：</b>学得快。<br><b>危险：</b>错误也一起吸进去。</p><div class="big-icon">🧽</div></div>
+      <div class="versus">VS</div>
+      <div class="style-card gold"><h3>淘金式 🥣</h3><p>“我先筛一筛，哪些是真金？”</p><p><b>动作：</b>提问、比较、查证、形成自己的结论。</p><div class="big-icon">✨</div></div>
+    </section>
+
+    <h2>2. 全书其实是四道检查门</h2>
+    <section class="pipeline">
+      <div class="gate"><div class="gate-num">1</div><h3>他在说什么？</h3><ul><li><b>论题</b>是什么？</li><li><b>结论</b>是什么？</li><li>给了哪些<b>理由</b>？</li></ul></div>
+      <div class="gate"><div class="gate-num">2</div><h3>话里藏了什么？</h3><ul><li>关键词是否<b>含糊</b>？</li><li>背后有什么<b>价值取舍</b>？</li><li>默认了什么<b>事实假设</b>？</li></ul></div>
+      <div class="gate"><div class="gate-num">3</div><h3>靠谱吗？</h3><ul><li>有没有<b>谬误</b>？</li><li><b>证据</b>可靠吗？</li><li>还有别的<b>原因</b>吗？</li><li><b>数字</b>会骗人吗？</li></ul></div>
+      <div class="gate"><div class="gate-num">4</div><h3>还缺什么？</h3><ul><li>省略了什么<b>成本、风险、反例</b>？</li><li>除了“是/不是”，还有哪些<b>合理结论</b>？</li></ul></div>
+    </section>
+
+    <h2>3. 随身携带的 11 个问题</h2>
+    <section class="eleven">
+      <div class="q"><span>1</span><div><b>论题与结论？</b><small>到底在争什么？他要我相信什么？</small></div></div>
+      <div class="q"><span>2</span><div><b>理由是什么？</b><small>因为后面跟的，真能托住结论吗？</small></div></div>
+      <div class="q"><span>3</span><div><b>词语含糊吗？</b><small>“成功、有效、严重”具体指什么？</small></div></div>
+      <div class="q"><span>4</span><div><b>价值假设？</b><small>更看重自由、公平、效率，还是安全？</small></div></div>
+      <div class="q"><span>5</span><div><b>描述性假设？</b><small>理由到结论之间，默认什么是真的？</small></div></div>
+      <div class="q"><span>6</span><div><b>有谬误吗？</b><small>人身攻击、稻草人、二选一、诉诸情绪？</small></div></div>
+      <div class="q"><span>7</span><div><b>证据好吗？</b><small>个案、专家、调查、研究，各有多可靠？</small></div></div>
+      <div class="q"><span>8</span><div><b>还有别的原因？</b><small>相关不等于因果，可能有第三个因素。</small></div></div>
+      <div class="q"><span>9</span><div><b>数字骗人吗？</b><small>样本、平均数、基准、测量方法是什么？</small></div></div>
+      <div class="q"><span>10</span><div><b>省略了什么？</b><small>代价、失败者、反例、替代方案在哪里？</small></div></div>
+      <div class="q"><span>11</span><div><b>还有什么结论？</b><small>答案也许取决于条件，而不是非黑即白。</small></div></div>
+    </section>
+
+    <h2>4. 论证像一座小桥</h2>
+    <section class="argument">
+      <div class="arg-box">理由<small>因为……</small></div><div class="join">＋</div>
+      <div class="arg-box">隐藏假设<small>默认……</small></div><div class="join">→</div>
+      <div class="arg-box">结论<small>所以……</small></div>
+    </section>
+    <p style="text-align:center;margin:12px 0 0;color:#607289;font-size:17px">桥板是理由，桥墩是隐藏假设。任何一块断了，结论都可能掉下去。</p>
+
+    <h2>5. 最有益的六个思考</h2>
+    <section class="use-grid">
+      <div class="use"><div class="use-icon">🪞</div><div><h3>先检查自己</h3><p><em>弱势批判</em>只挑别人毛病；<em>强势批判</em>也会挑战自己的信念。</p></div></div>
+      <div class="use"><div class="use-icon">🌫️</div><div><h3>先定义词语</h3><p>很多争论不是观点不同，而是双方说的“好、快、公平”根本不是一回事。</p></div></div>
+      <div class="use"><div class="use-icon">🧪</div><div><h3>证据分等级</h3><p>“我朋友遇到过”不能自动代表所有人；样本、测量和来源决定可信度。</p></div></div>
+      <div class="use"><div class="use-icon">🔀</div><div><h3>相关不等于因果</h3><p>A和B一起出现，不代表A造成B；先找第三个因素和反方向解释。</p></div></div>
+      <div class="use"><div class="use-icon">🕳️</div><div><h3>看见缺席的信息</h3><p>真正影响判断的，常是没说出来的成本、风险、反例和失败者。</p></div></div>
+      <div class="use"><div class="use-icon">🌈</div><div><h3>接受灰度答案</h3><p>好答案常是“如果A成立，就选B”；不是永远只有赞成和反对。</p></div></div>
+    </section>
+
+    <h2>6. 大脑会偷偷绊你一跤</h2>
+    <section class="trap">
+      <h3>第13章提醒：最大的敌人不一定是坏人，而是自己的快捷键。</h3>
+      <p>我们会为了舒服、省力和维护面子，过早停止思考。</p>
+      <div class="trap-row">
+        <div class="trap-card"><span>⚡</span>想得太快</div>
+        <div class="trap-card"><span>😇</span>晕轮效应</div>
+        <div class="trap-card"><span>🔒</span>信念固着</div>
+        <div class="trap-card"><span>🎈</span>一厢情愿</div>
+        <div class="trap-card"><span>🏷️</span>刻板印象</div>
+        <div class="trap-card"><span>📺</span>可得性偏差</div>
+        <div class="trap-card"><span>🎯</span>答非所问</div>
+        <div class="trap-card"><span>👑</span>自我中心</div>
+      </div>
+    </section>
+
+    <h2>7. 举个例子：“AI能让团队效率翻倍”</h2>
+    <section class="example">
+      <div class="claim"><p class="quote">“用了AI，团队效率可以翻倍！”</p><p>这句话听起来很棒，但先不要马上点头或摇头。</p><div style="font-size:70px;text-align:center">🤖❓</div></div>
+      <div class="check"><h3>用书中的问题扫一扫</h3><ol><li>“效率”是速度、质量，还是成本？</li><li>“翻倍”的数据从哪里来？样本多大？</li><li>有没有只公布成功团队？</li><li>培训、审校和数据安全成本呢？</li><li>结果可能来自流程优化，而不只是AI吗？</li><li>更合理的结论会不会是：“某些标准化任务，在有人复核时更快”？</li></ol></div>
+    </section>
+
+    <h2>8. 真正值得留下，以及要小心的地方</h2>
+    <section class="keep">
+      <div class="good"><h3>值得留下 ✅</h3><ul><li>把“我感觉”升级为“我的理由和证据”。</li><li>把一句结论拆成可检查的零件。</li><li>主动找反例、替代原因和遗漏信息。</li><li>允许多个结论，并写清适用条件。</li><li>把同样严格的问题用在自己身上。</li></ul></div>
+      <div class="care"><h3>不要用错 ⚠️</h3><ul><li>它是检查清单，不是自动产出真相的机器。</li><li>没有领域知识，可能问得对却判断错证据。</li><li>别把对话变成审讯；提问要说明善意。</li><li>低风险小事不必每次完成11项全检。</li><li>高风险判断仍需查看原始数据和专业来源。</li></ul></div>
+    </section>
+
+    <h2>9. 今天就能练的 5 分钟动作</h2>
+    <section class="practice">
+      <h3>选一条你刚看到的新闻、汇报或群聊观点</h3>
+      <ol><li>用一句话写出对方的结论。</li><li>列出对方给的2—3条理由。</li><li>圈出一个含糊词和一个隐藏假设。</li><li>问：“什么证据会让我改变判断？”</li><li>补一个替代原因、一个被省略的信息。</li><li>写一个带条件的新结论。</li></ol>
+      <div class="mini-form">
+        <div class="mini"><b>他要我相信：</b>______</div><div class="mini"><b>主要理由：</b>______</div><div class="mini"><b>含糊词：</b>______</div>
+        <div class="mini"><b>隐藏假设：</b>______</div><div class="mini"><b>缺的证据：</b>______</div><div class="mini"><b>更合理结论：</b>如果___，那么___</div>
+      </div>
+    </section>
+
+    <footer>
+      资料核对：Pearson第12版官方介绍与目录、机械工业出版社中文版目录、公开教学摘要。以上为学习型概括，不替代原书全文。<br>
+      参考：<a href="https://www.pearson.com/en-us/subject-catalog/p/asking-the-right-questions-a-guide-to-critical-thinking/P200000002371/9780137501731">Pearson官方书目</a> · <a href="https://detail.youzan.com/show/goods?alias=3nfigzvojk50yqb&from_source=gbox_seo">机械工业出版社中文版目录</a> · <a href="https://user.eng.umd.edu/~pabshire/choe-criticalthinking07.pdf">批判性问题公开教学摘要</a>
+    </footer>
+  </main>
+</body>
+</html>
